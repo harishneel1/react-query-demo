@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "title": "Sundar Pichai Interview",
+            "body": "Discussing The Future of Tech"
+        },
+        {
+            "id": "2",
+            "title": "Marques Reviews Tesla",
+            "body": "Tesla's latest EV review"
+        },
+        {
+            "id": "3",
+            "title": "AI in 2024",
+            "body": "Impact on daily life"
+        }
+    ]
+}

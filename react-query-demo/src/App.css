@@ -72,6 +72,11 @@ nav ul li a.active {
   margin: 0 auto;
 }
 
+.post-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .post-item {
   background-color: #40444b;
   border-radius: 8px;

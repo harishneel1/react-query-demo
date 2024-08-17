@@ -101,6 +101,10 @@ nav ul li a.active {
   margin-top: 8px;
 }
 
+.fruit-label {
+  font-size: 2rem;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

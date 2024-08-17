@@ -2,7 +2,7 @@
     "posts": [
         {
             "id": "1",
-            "title": "Sundar Pichai Interview",
+            "title": "Sundar Pichai Interview 1",
             "body": "Discussing The Future of Tech"
         },
         {
@@ -14,6 +14,88 @@
             "id": "3",
             "title": "AI in 2024",
             "body": "Impact on daily life"
+        }
+    ],
+    "fruits": [
+        {
+            "id": "1",
+            "name": "Apple"
+        },
+        {
+            "id": "2",
+            "name": "Banana"
+        },
+        {
+            "id": "3",
+            "name": "Orange"
+        },
+        {
+            "id": "4",
+            "name": "Strawberry"
+        },
+        {
+            "id": "5",
+            "name": "Mango"
+        },
+        {
+            "id": "6",
+            "name": "Pineapple"
+        },
+        {
+            "id": "7",
+            "name": "Grapes"
+        },
+        {
+            "id": "8",
+            "name": "Watermelon"
+        },
+        {
+            "id": "9",
+            "name": "Blueberry"
+        },
+        {
+            "id": "10",
+            "name": "Cherry"
+        },
+        {
+            "id": "11",
+            "name": "Peach"
+        },
+        {
+            "id": "12",
+            "name": "Plum"
+        },
+        {
+            "id": "13",
+            "name": "Kiwi"
+        },
+        {
+            "id": "14",
+            "name": "Papaya"
+        },
+        {
+            "id": "15",
+            "name": "Pomegranate"
+        },
+        {
+            "id": "16",
+            "name": "Lemon"
+        },
+        {
+            "id": "17",
+            "name": "Coconut"
+        },
+        {
+            "id": "18",
+            "name": "Pear"
+        },
+        {
+            "id": "19",
+            "name": "Guava"
+        },
+        {
+            "id": "20",
+            "name": "Lychee"
         }
     ]
 }

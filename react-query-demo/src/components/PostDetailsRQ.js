@@ -12,8 +12,7 @@ const PostDetailsRQ = () => {
 
     const { data, isLoading, isError, error } = useQuery({
         queryKey: ["posts", postId],
-        queryFn: () => fetchPostDetails(postId),
-        placeholderData: keepPreviousData
+        queryFn: () => fetchPostDetails(postId)
     })
 
 

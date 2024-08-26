@@ -1,20 +1,19 @@
-import { keepPreviousData, useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect } from 'react'
+import { useInView } from "react-intersection-observer";
 
-const fetchFruits = ({ pageParam = 1 }) => {
-    return axios.get(`http://localhost:4000/fruits/?_limit=4&_page=${pageParam}`);
+const fetchFruits = ({ pageParam }) => {
+    return axios.get(`http://localhost:4000/fruits/?_limit=10&_page=${pageParam}`);
 }
 
 const InfiniteQueries = () => {
 
-    const { data, isLoading, isError, error, fetchNextPage, hasNextPage } = useInfiniteQuery({
+    const { data, isLoading, isError, error, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery({
         queryKey: ["fruits"],
         queryFn: fetchFruits,
         initialPageParam: 1,
         getNextPageParam: (_lastPage, allPages) => {
-
             if (allPages.length < 5) {
                 return allPages.length + 1
             } else {
@@ -22,6 +21,14 @@ const InfiniteQueries = () => {
             }
         }
     })
+
+    const { ref, inView } = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            fetchNextPage();
+        }
+    }, [fetchNextPage, inView])
 
     if (isLoading) {
         return <h2>Page is Loading...</h2>
@@ -33,14 +40,14 @@ const InfiniteQueries = () => {
 
     return (
         <div className='container'>
-            {
-                data?.pages?.map((group) => {
-                    return group?.data.map(fruit => {
-                        return <div className='fruit-item'>{fruit.name}</div>
-                    })
+            {data?.pages?.map(page => {
+                return page?.data.map(fruit => {
+                    return <div className='fruit-item' key={fruit.id}>
+                        {fruit.name}
+                    </div>
                 })
-            }
-            <button disabled={!hasNextPage} onClick={fetchNextPage}>Load more</button>
+            })}
+            <div ref={ref}>{isFetchingNextPage && "Loading..."}</div>
         </div>
     )
 }
